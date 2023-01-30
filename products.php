@@ -1,5 +1,5 @@
 <?php
-    
+    include('navbar.php');
 ?>
 
 <html>
@@ -7,7 +7,7 @@
         <title>Phone Place</title>
     </head>
     <body>
-        <h1>Buy vitu</h1>
+        <h1>Phone Place</h1>
         <p>One stop shop to all second hand phones</p>
     </body>
 </html>
