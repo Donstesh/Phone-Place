@@ -5,31 +5,31 @@
    include("functions.php");
 
 
-   if(isset($_POST['username']) && isset($_POST['p_word']) && isset($_POST['phonenumber'])) {
-    // SOMETHING WAS POSTED
-   $username = $_POST['username'];
-   $p_word = $_POST['p_word'];
-   //$password = $_POST['password'];
-   $phonenumber = $_POST['phonenumber'];
-  
+if (isset($_POST['username']) && isset($_POST['p_word']) && isset($_POST['phonenumber'])) {
+  // SOMETHING WAS POSTED
+  $username = $_POST['username'];
+  $p_word = $_POST['p_word'];
+  //$password = $_POST['password'];
+  $phonenumber = $_POST['phonenumber'];
+
+}
+
+ 
+if(!empty($username) && !empty($password) &&!empty($phonenumber) && !is_numeric($username)){
+
+  if(!empty($username) && !empty($p_word) && !is_numeric($username)){
 
 
-<<<<<<< HEAD
-    if(!empty($username) && !empty($password) &&!empty($phonenumber) && !is_numeric($username)){
-=======
-    if(!empty($username) && !empty($p_word) && !is_numeric($username)){
->>>>>>> 87734ab6e1b9336e4d128608be8f3cb9917a3322
+      // save to database
+      $user_id = random_num(20);
+          $query = "INSERT INTO phone_users (user_id, username, p_word, phonenumber) VALUES ('$user_id', '$username', '$p_word' '$phonenumber)";
+      mysqli_query($con,$query);
 
-        // save to database
-        $user_id = random_num(20);
-            $query = "INSERT INTO phone_users (user_id, username, p_word, phonenumber) VALUES ('$user_id', '$username', '$p_word' '$phonenumber)";
-       mysqli_query($con,$query);
-
-            header("Location: login.php");
-            die;
-        } else {
-            echo "Please enter some valid information";
-    };
+          header("Location: login.php");
+          die;
+      } else {
+          echo "Please enter some valid information";
+  };
 }
      
 
@@ -212,5 +212,5 @@ fieldset {
 }
 
 </style>
-</html>
 
+</html>
