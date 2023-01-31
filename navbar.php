@@ -11,8 +11,8 @@
 <body>
 
     <ul>
-    <li><a class="active" href="#home">Home</a></li>
-    <li><a href="products.php">Products</a></li>
+    <li><a class="active" href="products.php">Phone Place</a></li>
+    <li style="padding-left:500px;"><a href="products.php">Products</a></li>
     <li><a href="sell.php">Sell</a></li>
     <li><a href="contact-seller.php">Contact Seller</a></li>
     <li><a href="register.php">Sign Up</a></li>
@@ -31,7 +31,7 @@
         margin: 0;
         padding: 0px;
         overflow: hidden;
-        background-color: lightgray;
+        background: linear-gradient(45deg, rgb(156, 14, 156), midnightblue);
       }
 
       li {
@@ -40,7 +40,7 @@
 
       li a {
         display: block;
-        color: blue;
+        color: white;
       font-size:20px;
         text-align: center;
         padding: 10px 20px;
