@@ -5,20 +5,24 @@
    include("functions.php");
 
 
-   if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['phonenumber'])) {
+   if(isset($_POST['username']) && isset($_POST['p_word']) && isset($_POST['phonenumber'])) {
     // SOMETHING WAS POSTED
    $username = $_POST['username'];
-   $password = $_POST['password'];
-   $password = $_POST['password'];
+   $p_word = $_POST['p_word'];
+   //$password = $_POST['password'];
    $phonenumber = $_POST['phonenumber'];
   
 
 
+<<<<<<< HEAD
     if(!empty($username) && !empty($password) &&!empty($phonenumber) && !is_numeric($username)){
+=======
+    if(!empty($username) && !empty($p_word) && !is_numeric($username)){
+>>>>>>> 87734ab6e1b9336e4d128608be8f3cb9917a3322
 
         // save to database
         $user_id = random_num(20);
-            $query = "INSERT INTO phone_users (user_id, username, password, phonenumber) VALUES ('$user_id', '$username', '$password' '$phonenumber)";
+            $query = "INSERT INTO phone_users (user_id, username, p_word, phonenumber) VALUES ('$user_id', '$username', '$p_word' '$phonenumber)";
        mysqli_query($con,$query);
 
             header("Location: login.php");
@@ -38,7 +42,7 @@
     <body>
       
     <div class="container">  
-      <form  id="contact" action="" method="post" enctype="text/plain" >
+      <form  id="contact" action="register.php" method="post" enctype="text/plain" >
         <h2>Create your Account</h2>
         <fieldset>
           <input placeholder="Name" name="fullname"  type="text" tabindex="1" required autofocus>
@@ -47,7 +51,7 @@
           <input placeholder=" Email Address" name="Email" type="email" tabindex="2" required>
         </fieldset>
         <fieldset>
-          <input placeholder="Enter your password" name="password"  type="password" tabindex="1" required autofocus>
+          <input placeholder="Enter your password" name="p_word"  type="password" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
           <input placeholder="Re Enter your password" name="Reenter-password"  type="password" tabindex="1" required autofocus>
