@@ -1,5 +1,6 @@
 <?php
    session_start();
+   include('navbar.php');
    include("connection.php");
    include("functions.php");
 
@@ -7,6 +8,7 @@
    if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['phonenumber'])) {
     // SOMETHING WAS POSTED
    $username = $_POST['username'];
+   $password = $_POST['password'];
    $password = $_POST['password'];
    $phonenumber = $_POST['phonenumber'];
 
