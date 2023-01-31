@@ -37,7 +37,7 @@
     <body>
       
     <div class="container">  
-      <form  id="contact" action="" method="post" enctype="text/plain" >
+      <form  id="contact" action="register.php" method="post" enctype="text/plain" >
         <h2>Create your Account</h2>
         <fieldset>
           <input placeholder="Name" name="fullname"  type="text" tabindex="1" required autofocus>
