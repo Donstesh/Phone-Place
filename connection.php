@@ -2,7 +2,7 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpassword = "";
-$dbname = "phone_place";
+$dbname = "login_sample_db";
 
 
 if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
