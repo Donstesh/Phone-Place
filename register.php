@@ -11,9 +11,10 @@
    $password = $_POST['password'];
    $password = $_POST['password'];
    $phonenumber = $_POST['phonenumber'];
+  
 
 
-    if(!empty($username) && !empty($password) && !is_numeric($username)){
+    if(!empty($username) && !empty($password) &&!empty($phonenumber) && !is_numeric($username)){
 
         // save to database
         $user_id = random_num(20);
