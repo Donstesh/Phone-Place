@@ -1,9 +1,30 @@
 <?php
-    include('navbar.php');
-session_start();
+   session_start();
    include("connection.php");
    include("functions.php");
 
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    // SOMETHING WAS POSTED
+   $username = $_POST['username'];
+   $password = $_POST['password'];
+   $phonenumber = $_POST['phonenumber'];
+
+
+    if(!empty($username) && !empty($password) && !is_numeric($username)){
+
+        // save to database
+        $user_id = random_num(20);
+            $query = "INSERT INTO phone_users (user_id, username, password, phonenumber) VALUES ('$user_id', '$username', '$password' '$phonenumber)";
+       mysqli_query($con,$query);
+
+            header("Location: login.php");
+            die;
+        } else {
+            echo "Please enter some valid information";
+    };
+}
+     
 
 ?>
 
@@ -14,13 +35,13 @@ session_start();
     <body>
       
     <div class="container">  
-      <form  id="contact" action="mailto:denkogei24@gmail.com" method="post" enctype="text/plain" >
+      <form  id="contact" action="" method="post" enctype="text/plain" >
         <h2>Create your Account</h2>
         <fieldset>
           <input placeholder="Name" name="fullname"  type="text" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
-          <input placeholder=" Email Address" name="Email" type="text" tabindex="2" required>
+          <input placeholder=" Email Address" name="Email" type="email" tabindex="2" required>
         </fieldset>
         <fieldset>
           <input placeholder="Enter your password" name="password"  type="password" tabindex="1" required autofocus>
@@ -34,7 +55,7 @@ session_start();
         <fieldset>
 
         <fieldset>
-          <button  type="submit"  value="Signup" id="contact-submit" data-submit="...Sending" onclick="sendEmail()">Submit</button>
+          <button  type="submit"  value="Signup" id="contact-submit">SignUp</button>
         </fieldset>
       </form>
     </div>
