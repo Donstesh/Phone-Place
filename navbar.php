@@ -11,7 +11,7 @@
 <body>
 
     <ul>
-    <li><a class="active" href="products.php">Phone Place</a></li>
+    <li><a href="products.php">Phone Place</a></li>
     <li style="padding-left:500px;"><a href="products.php">Products</a></li>
     <li><a href="sell.php">Sell</a></li>
     <li><a href="contact-seller.php">Contact Seller</a></li>
