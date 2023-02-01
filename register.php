@@ -1,36 +1,7 @@
 <?php
    session_start();
    include('navbar.php');
-   include("connection.php");
    include("functions.php");
-
-
-if (isset($_POST['username']) && isset($_POST['p_word']) && isset($_POST ['pass_word']) && isset($_POST['phonenumber'])) {
-  // SOMETHING WAS POSTED
-  $username = $_POST['username'];
-  $p_word = $_POST['p_word'];
-  $pass_word = $_POST['pass_word'];
-  $phonenumber = $_POST['phonenumber'];
-
-}
-
-
-    if(!empty($username) && !empty($p_word) && !empty($pass_word) &&!empty($phonenumber) && !is_numeric($username)){
-
-    if(!empty($username) && !empty($p_word)  && !empty($pass_word) && !is_numeric($username)){
-
-
-        // save to database
-        $user_id = random_num(20);
-            $query = "INSERT INTO phone_users (user_id, username, p_word,pass_word, phonenumber) VALUES ('$user_id', '$username', '$p_word, $pass_word' '$phonenumber)";
-       mysqli_query($con,$query);
-
-            header("Location: login.php");
-            die;
-        } else {
-            echo "Please enter some valid information";
-    };
-}
      
 
 ?>
