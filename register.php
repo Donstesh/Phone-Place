@@ -1,31 +1,7 @@
 <?php
    session_start();
    include('navbar.php');
-   include("connection.php");
    include("functions.php");
-
-
-   if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['phonenumber'])) {
-    // SOMETHING WAS POSTED
-   $username = $_POST['username'];
-   $password = $_POST['password'];
-   $password = $_POST['password'];
-   $phonenumber = $_POST['phonenumber'];
-
-
-    if(!empty($username) && !empty($password) && !is_numeric($username)){
-
-        // save to database
-        $user_id = random_num(20);
-            $query = "INSERT INTO phone_users (user_id, username, password, phonenumber) VALUES ('$user_id', '$username', '$password' '$phonenumber)";
-       mysqli_query($con,$query);
-
-            header("Location: login.php");
-            die;
-        } else {
-            echo "Please enter some valid information";
-    };
-}
      
 
 ?>
@@ -40,16 +16,16 @@
       <form  id="contact" action="register.php" method="post" enctype="text/plain" >
         <h2>Create your Account</h2>
         <fieldset>
-          <input placeholder="Name" name="fullname"  type="text" tabindex="1" required autofocus>
+          <input placeholder="Name" name="name"  type="text" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
-          <input placeholder=" Email Address" name="Email" type="email" tabindex="2" required>
+          <input placeholder=" Email Address" name="email" type="email" tabindex="2" required>
         </fieldset>
         <fieldset>
-          <input placeholder="Enter your password" name="password"  type="password" tabindex="1" required autofocus>
+          <input placeholder="Enter your password" name="pass_word"  type="password" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
-          <input placeholder="Re Enter your password" name="Reenter-password"  type="password" tabindex="1" required autofocus>
+          <input placeholder="Confirm password" name="confirm_password"  type="password" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
           <input placeholder=" Phone Number (optional)" name="phonenumber" type="phonenumber" tabindex="3" >
