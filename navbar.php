@@ -55,7 +55,7 @@
       li a:hover {
         background-color: orange;
         color: white;
-      }
+      };
 </style>
 </html>
 
