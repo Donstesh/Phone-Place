@@ -2,7 +2,6 @@
    session_start();
    include('navbar.php');
    include("functions.php");
-     
 
 ?>
 
@@ -16,7 +15,7 @@
       <form  id="contact" action="register.php" method="post" enctype="text/plain" >
         <h2>Create your Account</h2>
         <fieldset>
-          <input placeholder="Name" name="name"  type="text" tabindex="1" required autofocus>
+          <input placeholder="Your Name" name="name"  type="text" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
           <input placeholder=" Email Address" name="email" type="email" tabindex="2" required>
