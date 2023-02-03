@@ -1,186 +1,114 @@
-<?php
-   session_start();
-   include('navbar.php');
-   include("functions.php");
-
+<?php 
+include('connection.php');
+include('navbar.php');
 ?>
 
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>SignUp</title>
-    </head>
-    <body>
-      
-    <div class="container">  
-      <form  id="contact" action="register.php" method="post" enctype="text/plain" >
-        <h2>Create your Account</h2>
-        <fieldset>
-          <input placeholder="Your Name" name="name"  type="text" tabindex="1" required autofocus>
-        </fieldset>
-        <fieldset>
-          <input placeholder=" Email Address" name="email" type="email" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-          <input placeholder="Enter your password" name="pass_word"  type="password" tabindex="1" required autofocus>
-        </fieldset>
-        <fieldset>
-          <input placeholder="Confirm password" name="confirm_password"  type="password" tabindex="1" required autofocus>
-        </fieldset>
-        <fieldset>
-          <input placeholder=" Phone Number (optional)" name="phonenumber" type="phonenumber" tabindex="3" >
-        </fieldset>
-        <fieldset>
-
-        <fieldset>
-          <button  type="submit"  value="Signup" id="contact-submit">SignUp</button>
-        </fieldset>
-      </form>
-    </div>
-
-    </body>
-    <style>
-    @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased;
-  -font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+<head>
+  <title>Registration system PHP and MySQL</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="header">
+  	<h2>Register</h2>
+  </div>
+	
+  <form method="post" action="register.php">
+  	<?php include('errors.php'); ?>
+  	<div class="input-group">
+  	  <label>Username</label>
+  	  <input type="text" name="username" value="<?php echo $username; ?>">
+  	</div>
+  	<div class="input-group">
+  	  <label>Email</label>
+  	  <input type="email" name="email" value="<?php echo $email; ?>">
+  	</div>
+  	<div class="input-group">
+  	  <label>Password</label>
+  	  <input type="password" name="password_1">
+  	</div>
+  	<div class="input-group">
+  	  <label>Confirm password</label>
+  	  <input type="password" name="password_2">
+  	</div>
+  	<div class="input-group">
+  	  <button type="submit" class="btn" name="reg_user">Register</button>
+  	</div>
+  	<p>
+  		Already a member? <a href="login.php">Sign in</a>
+  	</p>
+  </form>
+  <style>
+    * {
+  margin: 0px;
+  padding: 0px;
 }
-
 body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 12px;
-  line-height: 30px;
+  font-size: 120%;
+  background: #F8F8FF;
 }
 
-.container {
-  max-width: 400px;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
+.header {
+  width: 30%;
+  margin: 50px auto 0px;
+  color: white;
+  background: #5F9EA0;
+  text-align: center;
+  border: 1px solid #B0C4DE;
+  border-bottom: none;
+  border-radius: 10px 10px 0px 0px;
+  padding: 20px;
 }
-
-#contact input[type="text"],
-#contact input[type="email"],
-#contact input[type="phonenumber"],
-#contact input[type="url"],
-#contact button[type="submit"] {
-  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+form, .content {
+  width: 30%;
+  margin: 0px auto;
+  padding: 20px;
+  border: 1px solid #B0C4DE;
+  background: white;
+  border-radius: 0px 0px 10px 10px;
 }
-
-#contact {
-  background: #F9F9F9;
-  padding: 25px;
-  margin: 150px 0;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+.input-group {
+  margin: 10px 0px 10px 0px;
 }
-
-#contact h3 {
+.input-group label {
   display: block;
-  font-size: 30px;
-  font-weight: 300;
-  margin-bottom: 10px;
+  text-align: left;
+  margin: 3px;
 }
-
-#contact h4 {
-  margin: 5px 0 15px;
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
+.input-group input {
+  height: 30px;
+  width: 93%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
 }
-
-fieldset {
-  border: medium none !important;
-  margin: 0 0 10px;
-  min-width: 100%;
-  padding: 0;
-  width: 100%;
-}
-
-#contact input[type="text"],
-#contact input[type="email"],
-#contact input[type="phonenumber"],
-#contact input[type="password"],
-#contact textarea {
-  width: 100%;
-  border: 1px solid #ccc;
-  background: #FFF;
-  margin: 0 0 5px;
-  padding: 10px;
-}
-
-#contact input[type="text"]:hover,
-#contact input[type="email"]:hover,
-#contact input[type="tel"]:hover,
-#contact input[type="url"]:hover,
-#contact textarea:hover {
-  -webkit-transition: border-color 0.3s ease-in-out;
-  -moz-transition: border-color 0.3s ease-in-out;
-  transition: border-color 0.3s ease-in-out;
-  border: 1px solid #aaa;
-}
-
-#contact textarea {
-  height: 100px;
-  max-width: 100%;
-  resize: none;
-}
-
-#contact button[type="submit"] {
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  background: linear-gradient(45deg, rgb(156, 14, 156), midnightblue);
-  color: #FFF;
-  margin: 0 0 5px;
+.btn {
   padding: 10px;
   font-size: 15px;
+  color: white;
+  background: #5F9EA0;
+  border: none;
+  border-radius: 5px;
 }
-
-#contact button[type="submit"]:hover {
-  background: linear-gradient(45deg, rgb(156, 14, 156), midnightblue);
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
+.error {
+  width: 92%; 
+  margin: 0px auto; 
+  padding: 10px; 
+  border: 1px solid #a94442; 
+  color: #a94442; 
+  background: #f2dede; 
+  border-radius: 5px; 
+  text-align: left;
 }
-
-#contact button[type="submit"]:active {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+.success {
+  color: #3c763d; 
+  background: #dff0d8; 
+  border: 1px solid #3c763d;
+  margin-bottom: 20px;
 }
-
-.copyright {
-  text-align: center;
-}
-
-#contact input:focus,
-#contact textarea:focus {
-  outline: 0;
-  border: 1px solid #aaa;
-}
-
-::-webkit-input-placeholder {
-  color: #888;
-}
-
-:-moz-placeholder {
-  color: #888;
-}
-
-::-moz-placeholder {
-  color: #888;
-}
-
-:-ms-input-placeholder {
-  color: #888;
-}
-
-</style>
+  </style>
+</body>
 </html>
-
+ 
