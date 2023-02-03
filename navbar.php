@@ -11,13 +11,20 @@
 <body>
 
     <ul>
-    <li><a href="products.php">Phone Place</a></li>
-    <li  style="padding-left:500px;"><a href="sell.php">Sell</a></li>
+    <?php if (isset($_SESSION["logged_in"])): ?>
+    <li><a href="index.php">Phone Place</a></li>
+    <li style="padding-left:500px;"><a href="products.php">Products</a></li>
+    <li><a href="sell.php">Sell</a></li>
     <li><a href="contact-seller.php">Contact Seller</a></li>
-    
+    <li><a href="logout.php">Logout</a></li>
+    <?php 
+endif; 
+?>
+    <?php if (! isset($_SESSION["logged_in"])): ?>
     <li><a href="register.php">Sign Up</a></li>
     <li><a href="login.php">Login</a></li>
-    <li><a href="logout.php">Logout</a></li>
+   
+    <?php endif; ?>
     </ul>
 
   </body>
