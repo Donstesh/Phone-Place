@@ -1,12 +1,7 @@
 <?php
-    include('navbar.php');
-?>
+include('navbar.php');
+session_start();
 
-<html>
-    <head>
-        <title>Phone Place</title>
-    </head>
-    <body>
-        
-    </body>
-</html>
+session_destroy();
+
+header("location:login.php");
