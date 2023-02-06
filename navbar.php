@@ -12,7 +12,8 @@
 
     <ul>
     <?php
-    if(!isset($_SESSION['id'])){
+    if(isset($_SESSION['id'])){
+      echo $_SESSION['id'];
        ?>
       <li><a href="index.php">Phone Place</a></li>
        <li><a href="register.php">Sign Up</a></li>
