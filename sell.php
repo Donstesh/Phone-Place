@@ -1,23 +1,43 @@
 <?php
     include('navbar.php');
-include 'protect.php';
+// include 'protect.php';
     session_start();
 ?>
 
 
-<form action="/add-listing" method="POST" enctype="multipart/form-data">
-    <h3>Upload Item</h3>
-    <label>Title:</label>
-    <input type="text" name="title">
-    <label>Description:</label>
-    <input type="text" name="description">
-    <label>Price:</label>
-    <input type="number" name="price">
-    <label>Phone Number:</label>
-    <input type="number" name="phonenumber">
-    <label>Location:</label>
-    <input type="text" name="location">
-    <label>Images:</label>
-    <input type="file" name="product-image" id="" multiple>
-    <input type="submit" class="btn btn-primary">
-</form>
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="header">
+  	<h2>Add Product</h2>
+  </div>
+	
+  <form method="post" action="sell.php">
+  	<?php include('errors.php'); ?>
+  	<div class="input-group">
+  	  <label>Username</label>
+  	  <input type="text" name="username" value="<?php echo $username; ?>">
+  	</div>
+  	<div class="input-group">
+  	  <label>Email</label>
+  	  <input type="email" name="email" value="<?php echo $email; ?>">
+  	</div>
+  	<div class="input-group">
+  	  <label>Password</label>
+  	  <input type="password" name="password_1">
+  	</div>
+  	<div class="input-group">
+  	  <label>Confirm password</label>
+  	  <input type="password" name="password_2">
+  	</div>
+  	<div class="input-group">
+  	  <button type="submit" class="btn" name="reg_user">Register</button>
+  	</div>
+  	<p>
+  		Already a member? <a href="login.php">Sign in</a>
+  	</p>
+  </form>
+
+<style>
+    
+</style>
