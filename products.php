@@ -1,6 +1,6 @@
 <?php
     include('navbar.php');
-    include 'protect.php'
+    // include 'protect.php'
 ?>
 
 <html>
