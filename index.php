@@ -9,7 +9,7 @@ include('navbar.php');
   	header('location: login.php');
   }
   
-?>
+?> 
 <!DOCTYPE html>
 <html>
 <head>
