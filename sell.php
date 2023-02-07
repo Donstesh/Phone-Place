@@ -1,7 +1,21 @@
 <?php
     include('navbar.php');
-// include 'protect.php';
+
     session_start();
+
+  
+    // connect to the database
+$db = mysqli_connect('localhost', 'root', '', 'phone_place');
+
+    $query = "INSERT INTO phones (category, title, description, price, phonenumber, location, image_path)
+    VALUES('$category', '$title', '$description', '$price', '$phonenumber', '$location', '$image_path')";
+  
+  if (mysqli_query($db, $query)) {
+    header('location: products.php');
+  } else {
+    echo "Error: " . $query . "<br>" . mysqli_error($db);
+  }
+
 ?>
 
 
@@ -15,7 +29,15 @@
   <form method="post" action="sell.php">
   <h3>Upload Phone</h3>
   <div class="input-group">
-  <select class="input-el" name="category" id="category" required>
+  <select style="
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;" class="input-el" name="category" id="category" required>
     <option value="">---Choose Phone Model---</option>
     <option value="huawei">Huawei</option>
     <option value="samsung">Samsung</option>
@@ -49,7 +71,7 @@
     </div>
     <div class="input-group">
         <label>Images:</label>
-        <input type="file" name="product-image" id="" multiple><br>
+        <input type="file" name="product-image" id="upload" multiple><br>
     </div>
         <input type="submit" class="btn btn-primary">
   </form>
@@ -93,7 +115,7 @@ form, .content {
 }
 .input-group input {
   height: 30px;
-  width: 93%;
+  width: 100%;
   padding: 5px 10px;
   font-size: 16px;
   border-radius: 5px;
