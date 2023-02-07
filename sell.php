@@ -17,7 +17,7 @@ $db = mysqli_connect('localhost', 'root', '', 'phone_place');
   }
 
 ?>
-
+ 
 
 <!DOCTYPE html>
 <html>
