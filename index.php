@@ -65,8 +65,7 @@ include('navbar.php');
 	}
 	.home{
 		float: left;
-		padding-left: 20px;
-		padding-bottom: 70px;
+		padding-top: 70px;
 	}
 	.home h1{
 		font-size: 28px;
@@ -78,7 +77,7 @@ include('navbar.php');
 		float: right;
 		width: 100%;
 		height: 70px;
-		padding-left: 40px;
+		padding-top: 70px;
 	}
 </style>
 </body>
