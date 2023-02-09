@@ -50,7 +50,6 @@ include('navbar.php');
 	<img src="home.png">
 	</div>
 
-	
 <style>
 	
 	.header h2{
