@@ -1,22 +1,14 @@
 <?php
-    include('navbar.php');
+  include('navbar.php');
+  include('connection.php');
 
-    session_start();
+   
 
-  
-    // connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'phone_place');
 
     $query = "INSERT INTO phones (category, title, description, price, phonenumber, location, image_path)
-    VALUES('$category', '$title', '$description', '$price', '$phonenumber', '$location', '$image_path')";
+    VALUES('category', 'title', 'description', 'price', 'phonenumber', 'location', 'image_path')";
   
-  if (mysqli_query($db, $query)) {
-    header('location: products.php');
-  } else {
-    echo "Error: " . $query . "<br>" . mysqli_error($db);
-  }
-
-?>
+  ?>
  
 
 <!DOCTYPE html>
