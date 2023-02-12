@@ -11,12 +11,14 @@
 <body>
 
     <ul>
-    <li><a href="products.php">Phone Place</a></li>
-    <li  style="padding-left:500px;"><a href="sell.php">Sell</a></li>
-    <li><a href="contact-seller.php">Contact Seller</a></li>
-    <li><a href="register.php">Sign Up</a></li>
-    <li><a href="login.php">Login</a></li>
-    <li><a href="logout.php">Logout</a></li>
+      
+      <li><a href="index.php">Phone Place</a></li>
+       <li><a href="register.php">Sign Up</a></li>
+       <li><a href="login.php">Login</a></li>
+        <li style="padding-left:500px;"><a href="products.php">Products</a></li>
+       <li><a href="sell.php">Sell</a></li>
+       <li><a href="contact-seller.php">Contact Seller</a></li>
+        <li><a href="logout.php">Logout</a></li>
     </ul>
 
   </body>
@@ -30,7 +32,7 @@
         margin: 0;
         padding: 0px;
         overflow: hidden;
-        background: linear-gradient(45deg, rgb(156, 14, 156), midnightblue);
+        background: #5F9EA0;
       }
 
       li {
@@ -55,7 +57,7 @@
       li a:hover {
         background-color: orange;
         color: white;
-      }
+      };
 </style>
 </html>
 
